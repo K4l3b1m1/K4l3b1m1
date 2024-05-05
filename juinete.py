@@ -6,23 +6,55 @@ usuario_conta = []
 senha_conta = []
 
 def limpar(finalizar):
+        """essa função e responsavel por limpar a tela  de codigo anterior
+        
+        output:
+        - print(finalizar)
+        - prent()"""
         os.system('cls')
         print(finalizar)
         print()
 
 def fecha_tudo():
+        """essa função e responsavel por encerrar o codigo
+        
+        outpus:
+        -limpar()
+        - print("obrigado pela [...])"""
         limpar()
         print("obrigado pela sua ajuda e tambem por testar o nosso codigo :) ")
 
 # um exemplo do como pode fazer uma função quando o usuario usar uma caracter errado que não tenha sido pre definido
 def opcao_invalida():
+    """essa função e redponsavel por ciltar para o menu principal se o usuario usar uma opção não valida
+    
+    inputs:
+    - digite qualquer tecla para voltar ao menu principal
+    
+    outpus:
+    -print (opcão invalida)
+    -main()"""
+    
     print('opção invalida\n')
     input(' digite uma tecla para voltar ao menu principal')
     main()
 
 def welcome():
-        limpar("""O̳̿͟͞l̳̿͟͞a̳̿͟͞ ̳̿͟͞c̳̿͟͞o̳̿͟͞m̳̿͟͞o̳̿͟͞ ̳̿͟͞v̳̿͟͞a̳̿͟͞i̳̿͟͞,̳̿͟͞ ̳̿͟͞p̳̿͟͞a̳̿͟͞r̳̿͟͞a̳̿͟͞ ̳̿͟͞c̳̿͟͞o̳̿͟͞m̳̿͟͞e̳̿͟͞ç̳̳̿̿͟͟͞͞a̳̿͟͞r̳̿͟͞m̳̿͟͞o̳̿͟͞s̳̿͟͞ ̳̿͟͞d̳̿͟͞e̳̿͟͞ ̳̿͟͞a̳̿͟͞l̳̿͟͞g̳̿͟͞u̳̿͟͞m̳̿͟͞a̳̿͟͞s̳̿͟͞ ̳̿͟͞i̳̿͟͞n̳̿͟͞f̳̿͟͞o̳̿͟͞r̳̿͟͞m̳̿͟͞e̳̿͟͞ ̳̿͟͞a̳̿͟͞l̳̿͟͞g̳̿͟͞u̳̿͟͞n̳̿͟͞s̳̿͟͞ ̳̿͟͞p̳̿͟͞a̳̿͟͞r̳̿͟͞a̳̿͟͞ ̳̿͟͞q̳̿͟͞u̳̿͟͞e̳̿͟͞ ̳̿͟͞p̳̿͟͞o̳̿͟͞s̳̿͟͞s̳̿͟͞a̳̿͟͞m̳̿͟͞o̳̿͟͞s̳̿͟͞ ̳̿͟͞c̳̿͟͞o̳̿͟͞n̳̿͟͞t̳̿͟͞i̳̿͟͞n̳̿͟͞u̳̿͟͞a̳̿͟͞r̳̿͟͞\n """)
-        Nome = input ('qual seu nome :')
+        """essa função e responsavel  por obter informação do usuario NOME e IDADE
+
+        INPUTS:
+        -qual seu nome
+        -qual sua idade
+        
+        OUTPUS: 
+        -você é uma criança
+        -você é um adolecente
+        -você é um adulto
+        - oooo você ralmente tem muitos anos de vividos parabens
+        - idade"""
+
+        limpar("""Ola como vai, para começarmos de algumas informe alguns para que possamos continuar\n """)
+        Nome = input ('qual seu nome: ')
         try:
                 Idade = int(input ('qual sua idade:'))
                 # condicional para verifcar se um número corresponde ao que se pede
@@ -36,15 +68,22 @@ def welcome():
                 # qualquer valor pois ele define apenas o limite que pode ser colocado
                 else:
                         print(Idade,'oooooo você realmente tem muitos anos vividos parabens\n')
-        except:
-                print('idade não e valida tente novamente\n')
-                opcao_invalida()
+
+        except: opcao_invalida()
                 
 #condicional de verificador de usuario e senha
 def criar_senha():
+        """essa função e responsavel por criar um usuario e senha para o usuario
+         inputs:
+          -digite um usuario 
+          -digite uma senha
+          
+          outous:
+          - os tudo certo agora suas informações estão seguras"""
+        
         print('para continuar presisamos que você crie um usuario e senha pra manter seu dado  seguros\n ')
 
-        usuario = input('digite o usuario: ')
+        usuario = input('digite um usuario: ')
         usuario_conta.append(f'{usuario}')
 
         senha = input('digite a senha: ')
@@ -54,6 +93,14 @@ def criar_senha():
 
 #como criar um indentificador se o numero e impar ou par
 def impar_ou_par():
+                """essa função e responsavel por desiguinar se o numero inputado pelo usuario e impar ou par
+                input:
+                -digite um numero
+                
+                outputs:
+                -o numero e impar
+                -o numero e par"""
+
                 print('para comfirmamos que você não e uma robo digite um Número: ')
                 try:
                         Numero = int(input("digite um numero: "))
@@ -68,7 +115,19 @@ def impar_ou_par():
                        limpar()
 
 
+
+
 def opnião():   
+        """essa função e responsavel por obter a opnião do usuario sobre o codigo que ele testou
+        inputs:
+        -escolha uma opção
+        -qual ponto você gostou?
+        
+        outpus:
+        -que bom que você gostou
+        -que pena tentaremos melhorar na proxima obrigado
+        -opção invalida"""
+
         print('obridado pra que posamos finalizar diga se você gostou?\n')
         print('1. sim\n')
         print('2. não\n')
@@ -82,16 +141,14 @@ def opnião():
 
                         case 2:
                                 print('que pena tentaremos melhorar na proxima obrigado\n')
-                                
-                        case _:
-                                print("opção invalida")
-                                input('clique em alguma tecla para volta a onde estava')
-        except:
-                print('que pena que não legal do que foi feito melhoraremos no futuro :.)')
-                limpar()
+
+        except: print('que pena que não foi legal do que foi feito melhoraremos no futuro :.)')
+        
 
                                 
 def main():
+    """essa função ersponsavel por da inicio no progama"""
+    
     os.system('cls')
     welcome()
     criar_senha()
